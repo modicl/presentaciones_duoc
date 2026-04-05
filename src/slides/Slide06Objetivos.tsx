@@ -12,7 +12,7 @@ function MetaCard({ num, title, metric, detail }: { num: number; title: string; 
       <div>
         <p className="font-body text-base font-bold mb-0.5" style={{ color: 'var(--text)' }}>{title}</p>
         <p className="font-heading text-xl font-bold text-duoc-blue">{metric}</p>
-        <p className="font-body text-sm" style={{ color: 'var(--text-label)' }}>{detail}</p>
+        <p className="font-body text-base" style={{ color: 'var(--text-label)' }}>{detail}</p>
       </div>
     </div>
   )

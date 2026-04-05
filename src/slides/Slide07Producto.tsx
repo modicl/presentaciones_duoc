@@ -25,8 +25,8 @@ export default function Slide07Producto() {
           >
             <span className="shrink-0 font-heading text-2xl font-bold text-duoc-blue opacity-40 w-9">{num}</span>
             <div>
-              <p className="font-body text-lg font-bold mb-1" style={{ color: 'var(--text)' }}>{name}</p>
-              <p className="font-body text-base" style={{ color: 'var(--text-muted)' }}>{desc}</p>
+              <p className="font-body text-xl font-bold mb-1" style={{ color: 'var(--text)' }}>{name}</p>
+              <p className="font-body text-lg" style={{ color: 'var(--text-muted)' }}>{desc}</p>
             </div>
           </div>
         ))}

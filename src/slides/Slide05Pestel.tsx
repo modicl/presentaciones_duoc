@@ -1,95 +1,79 @@
 import SlideLayout from './SlideLayout'
 
-const FACTORS = [
+const INSIGHTS = [
   {
     letter: 'P',
-    name: 'Político',
-    items: [
-      'Tensión centralismo MINSAL vs. autonomía regional',
-      'Fondos concursables para transformación digital',
-      'Acuerdos binacionales con Bolivia y Perú',
-    ],
-  },
-  {
-    letter: 'E',
-    name: 'Económico',
-    items: [
-      '12–18% ineficiencia = activo recuperable',
-      'Competencia salarial minera para perfiles TI',
-      'Cloud Híbrido: CAPEX → OPEX escalable',
-    ],
-  },
-  {
-    letter: 'S',
-    name: 'Social',
-    items: [
-      'Demanda flotante no enrolada distorsiona métricas',
-      'Enfermedades mineras → oncología y nefrología',
-      'Baja alfabetización digital en zonas rurales',
-    ],
+    dimension: 'Político',
+    color: '#307FE2',
+    headline: 'El MINSAL financia la transformación digital',
+    desc: 'Fondos concursables activos para proyectos de salud digital — el entorno político impulsa, no frena.',
   },
   {
     letter: 'T',
-    name: 'Tecnológico',
-    items: [
-      'Silos SIDRA → integración HL7 FHIR (42.000 registros)',
-      'Zonas sin conectividad → modo offline + sincronización',
-      'SMS/IVR como canales redundantes para zonas remotas',
-    ],
-  },
-  {
-    letter: 'E',
-    name: 'Ecológico',
-    items: [
-      'Metales pesados mineros → alta morbilidad compleja',
-      'Política "cero papel" — flujos 100% digitales',
-      'Eventos climáticos extremos interrumpen conectividad',
-    ],
+    dimension: 'Tecnológico',
+    color: '#307FE2',
+    headline: 'HL7 FHIR es el estándar maduro disponible hoy',
+    desc: 'La tecnología de integración ya existe. Solo falta aplicarla a los 42.000 registros de SIDRA.',
   },
   {
     letter: 'L',
-    name: 'Legal',
-    items: [
-      'Ley 20.584 — transparencia de tiempos de espera',
-      'Ley 19.628 — protección de datos desde día 1',
-      'Ley 21.663 Ciberseguridad + WCAG 2.1 accesibilidad',
-    ],
+    dimension: 'Legal',
+    color: '#307FE2',
+    headline: 'Las leyes ya nos obligan a actuar',
+    desc: 'Ley 20.584 (transparencia de esperas) y Ley 19.628 (protección de datos) exigen cumplimiento inmediato.',
   },
+]
+
+const SUMMARY = [
+  { letter: 'E', label: 'Económico', note: '12–18% ineficiencia recuperable · cloud OPEX escalable' },
+  { letter: 'S', label: 'Social', note: 'Migración + envejecimiento aumentan demanda compleja' },
+  { letter: 'E', label: 'Ecológico', note: 'Extremo climático y minero agrava morbilidad' },
 ]
 
 export default function Slide05Pestel() {
   return (
     <SlideLayout
       label="Análisis del Macroentorno"
-      title="Análisis PESTEL"
-      stat="6"
-      statLabel="dimensiones analizadas"
+      title="PESTEL — 3 Hallazgos Clave"
+      stat="✓"
+      statLabel="el entorno nos impulsa"
+      statColor="#43B02A"
     >
-      <p className="font-body text-sm italic mb-3" style={{ color: 'var(--text-dim)' }}>
-        * Se presentan los 3 hallazgos más impactantes por dimensión.
-      </p>
-      <div className="grid grid-cols-3 gap-3">
-        {FACTORS.map(({ letter, name, items }) => (
+      <div className="space-y-3">
+        {INSIGHTS.map(({ letter, dimension, color, headline, desc }) => (
           <div
-            key={name}
-            className="rounded-lg p-4 border"
-            style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+            key={dimension}
+            className="flex gap-4 rounded-lg px-5 py-4 border"
+            style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)', borderLeftColor: color, borderLeftWidth: '3px' }}
           >
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-9 h-9 rounded-full bg-duoc-blue flex items-center justify-center font-heading font-bold text-white text-base shrink-0">
-                {letter}
-              </span>
-              <span className="font-body text-lg font-bold" style={{ color: 'var(--text)' }}>{name}</span>
+            <span className="w-9 h-9 rounded-full bg-duoc-blue flex items-center justify-center font-heading font-bold text-white text-base shrink-0">
+              {letter}
+            </span>
+            <div>
+              <p className="font-body text-lg font-bold mb-0.5" style={{ color: 'var(--text)' }}>{headline}</p>
+              <p className="font-body text-lg" style={{ color: 'var(--text-label)' }}>{desc}</p>
             </div>
-            <ul className="space-y-2">
-              {items.map(i => (
-                <li key={i} className="font-body text-base flex gap-1.5 leading-snug" style={{ color: 'var(--text-muted)' }}>
-                  <span className="text-duoc-blue shrink-0 mt-0.5">›</span>{i}
-                </li>
-              ))}
-            </ul>
           </div>
         ))}
+
+        <div
+          className="rounded-lg px-5 py-3 border"
+          style={{ backgroundColor: 'rgba(48,127,226,0.05)', borderColor: 'rgba(48,127,226,0.2)' }}
+        >
+          <p className="font-body text-xs text-duoc-blue uppercase tracking-widest mb-2">Otras dimensiones analizadas</p>
+          <div className="flex gap-6 flex-wrap">
+            {SUMMARY.map(({ letter, label, note }) => (
+              <div key={label} className="flex items-start gap-2">
+                <span className="w-6 h-6 rounded-full bg-duoc-blue flex items-center justify-center font-heading font-bold text-white text-xs shrink-0 mt-0.5">
+                  {letter}
+                </span>
+                <p className="font-body text-sm" style={{ color: 'var(--text-muted)' }}>
+                  <strong style={{ color: 'var(--text-label)' }}>{label}:</strong> {note}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </SlideLayout>
   )

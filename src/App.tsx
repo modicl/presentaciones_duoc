@@ -9,7 +9,6 @@ import Slide05Pestel from './slides/Slide05Pestel'
 import Slide06Objetivos from './slides/Slide06Objetivos'
 import Slide07Producto from './slides/Slide07Producto'
 import Slide08Stakeholders from './slides/Slide08Stakeholders'
-import Slide09Stakeholders from './slides/Slide09Stakeholders'
 import Slide10PropuestaValor from './slides/Slide10PropuestaValor'
 import Slide11Conclusiones from './slides/Slide11Conclusiones'
 
@@ -22,7 +21,6 @@ const SLIDES = [
   Slide06Objetivos,
   Slide07Producto,
   Slide08Stakeholders,
-  Slide09Stakeholders,
   Slide10PropuestaValor,
   Slide11Conclusiones,
 ]

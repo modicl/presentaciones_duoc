@@ -138,7 +138,7 @@
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
   border-radius: 6px;
-  padding: 8px 10px;
+  padding: 10px 14px;
 }
 
 .pdf-card-title {
@@ -232,8 +232,8 @@
 }
 
 .pdf-pilar-num {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: #307FE2;
   color: white;
@@ -294,7 +294,7 @@
   color: #374151;
   font-weight: 700;
   text-align: left;
-  padding: 5px 8px;
+  padding: 6px 10px;
   border: 1px solid #E2E8F0;
   font-size: 9px;
   text-transform: uppercase;
@@ -302,7 +302,7 @@
 }
 
 .pdf-table td {
-  padding: 5px 8px;
+  padding: 6px 10px;
   border: 1px solid #E2E8F0;
   vertical-align: middle;
   color: #374151;
@@ -332,8 +332,8 @@
 }
 
 .pdf-pestel-letter {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: #307FE2;
   color: white;
@@ -351,7 +351,7 @@
   background: #EFF6FF;
   border: 1px solid #BFDBFE;
   border-radius: 6px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   font-size: 11px;
   color: #1A1A1A;
   line-height: 1.4;
@@ -370,8 +370,8 @@
 }
 
 .pdf-meta-num {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 1.5px solid #307FE2;
   color: #307FE2;
@@ -482,6 +482,54 @@
   flex-shrink: 0;
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
+}
+
+/* ── Two-column layout with big stat (PdfLayout) ───────────── */
+.pdf-layout-left {
+  flex: 3;
+  padding: 16mm 10mm 14mm 24mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.pdf-layout-left .pdf-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pdf-layout-right {
+  flex: 2;
+  border-left: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20mm 16mm;
+}
+
+.pdf-layout-stat {
+  font-family: 'Merriweather', serif;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  word-break: break-all;
+}
+
+.pdf-layout-stat-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9CA3AF;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 120px;
 }
 
 /* ── Print media ────────────────────────────────────────────── */

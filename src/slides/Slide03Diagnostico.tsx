@@ -42,25 +42,6 @@ export default function Slide03Diagnostico() {
           desc="Baja penetración digital en zonas rurales y falta de actualización de datos de pacientes en tránsito."
         />
 
-        <div
-          className="rounded-lg px-4 py-3 border"
-          style={{ backgroundColor: 'rgba(48,127,226,0.06)', borderColor: 'rgba(48,127,226,0.25)' }}
-        >
-          <p className="font-body text-base text-duoc-blue uppercase tracking-widest mb-2">Exclusiones explícitas</p>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-1">
-            {[
-              'Modificación del código fuente de SIDRA',
-              'Historia Clínica Electrónica (HCE)',
-              'Gestión de equipamiento o insumos médicos',
-              'Integración con mutuales mineras privadas',
-              '12 CESFAM completos en Fase 1 (60% inicial)',
-            ].map(item => (
-              <p key={item} className="font-body text-base flex gap-1.5" style={{ color: 'var(--text-muted)' }}>
-                <span className="text-duoc-blue shrink-0">✕</span>{item}
-              </p>
-            ))}
-          </div>
-        </div>
       </div>
     </SlideLayout>
   )
