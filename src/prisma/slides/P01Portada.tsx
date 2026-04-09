@@ -19,9 +19,20 @@ export default function P01Portada() {
         >
           Plataforma P.R.I.S.M.A.
         </h2>
-        <p className="font-body text-xl mb-2" style={{ color: 'var(--text-muted)' }}>
-          Framework Agéntico de Asistencia Pedagógica
-        </p>
+        <div className="mb-3">
+          {[
+            ['P', 'lataforma de'],
+            ['R', 'ecursos'],
+            ['I', 'nteligentes para'],
+            ['S', 'oporte de'],
+            ['M', 'aterial'],
+            ['A', 'daptado'],
+          ].map(([letter, word]) => (
+            <span key={letter} className="font-body text-base mr-4" style={{ color: 'var(--text-muted)' }}>
+              <span className="font-heading font-bold text-duoc-blue">{letter}.</span>{word}
+            </span>
+          ))}
+        </div>
         <p className="font-body text-base mb-6" style={{ color: 'var(--text-label)' }}>
           Generación de material adaptado al perfil PACI
         </p>

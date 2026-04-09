@@ -150,7 +150,7 @@ export default function P09Herramientas() {
 
       {/* Criterios de selección — destacado */}
       <div
-        className="mx-16 mb-5 px-6 py-3 rounded-xl border-2 shrink-0"
+        className="mx-16 mb-10 px-6 py-3 rounded-xl border-2 shrink-0"
         style={{ borderColor: '#FFB800', backgroundColor: '#FFB80015' }}
       >
         <div className="flex items-center gap-3">
