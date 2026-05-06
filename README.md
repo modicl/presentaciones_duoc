@@ -9,7 +9,8 @@ El proyecto cuenta con un portal o **Menú Principal** desde el cual se pueden s
 Actualmente el repositorio alberga el material de las siguientes asignaturas:
 
 1. **Evaluación de Proyectos**
-   - **Contenido:** EP1 — Caso de Estudio: Servicio Público de Salud RedNorte. Analiza el diseño de un ecosistema digital, incluyendo análisis de Porter, PESTEL, objetivos, arquitectura de solución y stakeholders.
+   - **EP1** — Caso de Estudio: Servicio Público de Salud RedNorte. Analiza el diseño de un ecosistema digital (EDGDA), incluyendo análisis de Porter, PESTEL, objetivos, arquitectura de solución y stakeholders.
+   - **EP2** — Evaluación de Alternativas de Desarrollo. Presenta los criterios de factibilidad técnica, organizacional, normativa/legal y financiera aplicados al sistema EDGDA, con cinco opciones de desarrollo evaluadas mediante una Matriz de Factibilidad de 12 criterios y 84 puntos máximos.
    - **Docente:** Andrés Santoro Del Campo
 
 2. **Fullstack III**
