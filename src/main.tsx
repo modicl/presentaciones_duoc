@@ -5,6 +5,7 @@ import './pdf/pdf.css'
 import App from './App'
 import PdfView from './pdf/PdfView'
 import AppPrisma from './prisma/AppPrisma'
+import AppEP2 from './ep2/AppEP2'
 import MainMenu from './MainMenu'
 
 const params = new URLSearchParams(window.location.search)
@@ -23,6 +24,7 @@ function Root() {
   if (isPdf) return <PdfView />
   if (presentation === 'prisma') return <AppPrisma />
   if (presentation === 'ev-proyectos') return <App />
+  if (presentation === 'ep2') return <AppEP2 />
   return <MainMenu />
 }
 
