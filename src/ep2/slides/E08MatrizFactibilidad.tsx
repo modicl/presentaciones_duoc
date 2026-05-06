@@ -1,56 +1,66 @@
-const OPCIONES = [
+const MODULOS = [
   {
     rank: '1°',
-    nombre: 'Incremental Priorizado',
+    cod: 'M1',
+    nombre: 'Motor de Priorización Bio-Psico-Social',
     score: 74,
     max: 84,
     pct: Math.round((74 / 84) * 100),
-    nota: 'Flexibilidad + control normativo + gestión de riesgo por fases',
+    nota: 'Mayor impacto en la crisis asistencial · ROI inmediatamente medible',
+    fase: 'Fase 1',
     color: '#43B02A',
   },
   {
     rank: '2°',
-    nombre: 'Consorcio Público Inter-Servicios',
-    score: 71,
+    cod: 'M2',
+    nombre: 'Gestor de Reasignación Multicanal',
+    score: 73,
     max: 84,
-    pct: Math.round((71 / 84) * 100),
-    nota: 'Alto respaldo MINSAL · costos compartidos · plazo 24–36 meses (inviable en 12)',
-    color: '#307FE2',
+    pct: Math.round((73 / 84) * 100),
+    nota: 'Aliado natural de la gestión del cambio con SOME y gremios',
+    fase: 'Fase 1',
+    color: '#43B02A',
   },
   {
     rank: '3°',
-    nombre: 'Desarrollo In-House Integral',
-    score: 63,
+    cod: 'M4',
+    nombre: 'Portal de Autogestión del Paciente',
+    score: 71,
     max: 84,
-    pct: Math.round((63 / 84) * 100),
-    nota: 'Máximo control normativo · penalizado por CAPEX alto y plazo ajustado',
+    pct: Math.round((71 / 84) * 100),
+    nota: 'Mandato legal Ley 20.584 · Primera entrega de Fase 2',
+    fase: 'Fase 2',
     color: '#307FE2',
   },
   {
     rank: '4°',
-    nombre: 'Open Source Adaptado',
-    score: 58,
+    cod: 'M3',
+    nombre: 'Hub de Interoperabilidad HL7 FHIR',
+    score: 59,
     max: 84,
-    pct: Math.round((58 / 84) * 100),
-    nota: 'Sin vendor lock-in · alto costo de customización al contexto chileno',
-    color: '#FFB800',
+    pct: Math.round((59 / 84) * 100),
+    nota: 'Mayor riesgo técnico · Requiere SLA SIDRA firmado previo',
+    fase: 'Fase 2',
+    color: '#E53E3E',
   },
   {
     rank: '5°',
-    nombre: 'SaaS Especializado en Salud',
-    score: 52,
+    cod: 'M5',
+    nombre: 'Analytics de Capacidad Asistencial',
+    score: 59,
     max: 84,
-    pct: Math.round((52 / 84) * 100),
-    nota: 'Rápido · falla en cumplimiento normativo chileno — criterio determinante',
-    color: '#E53E3E',
+    pct: Math.round((59 / 84) * 100),
+    nota: 'Última entrega · Valor condicionado a calidad de M1+M2',
+    fase: 'Fase 2',
+    color: '#FFB800',
   },
 ]
 
 const TIPOS = [
-  { label: 'Técnica', criterios: 3, ponderacion: 'Relevantes' },
-  { label: 'Normativa/Legal', criterios: 3, ponderacion: 'Relevantes' },
-  { label: 'Organizacional', criterios: 3, ponderacion: 'Neutrales' },
-  { label: 'Financiera', criterios: 3, ponderacion: 'Neutrales/Marginales' },
+  { label: 'Técnica', ponderacion: '2 Relevantes · 1 Neutral', color: '#307FE2' },
+  { label: 'Normativa/Legal', ponderacion: '2 Relevantes · 1 Neutral', color: '#E53E3E' },
+  { label: 'Organizacional', ponderacion: '1 Relevante · 1 Neutral · 1 Marginal', color: '#FFB800' },
+  { label: 'Financiera', ponderacion: '1 Relevante · 1 Neutral · 1 Marginal', color: '#43B02A' },
 ]
 
 export default function E08MatrizFactibilidad() {
@@ -65,30 +75,41 @@ export default function E08MatrizFactibilidad() {
         {/* Left — ranking */}
         <div className="flex flex-col justify-center pl-16 pr-8 py-8 flex-[3] min-w-0">
           <p className="font-body text-sm tracking-[0.25em] text-duoc-blue uppercase mb-2">
-            Evaluación de Alternativas
+            Evaluación de Módulos
           </p>
           <h2 className="font-heading text-4xl font-bold leading-tight mb-5" style={{ color: 'var(--text)' }}>
             Resumen Matriz de Factibilidad
           </h2>
 
           <div className="space-y-3">
-            {OPCIONES.map(({ rank, nombre, score, max, pct, nota, color }) => (
+            {MODULOS.map(({ rank, cod, nombre, score, max, pct, nota, fase, color }) => (
               <div
-                key={nombre}
+                key={cod}
                 className="rounded-lg px-4 py-3 border"
                 style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
                 <div className="flex items-center gap-3 mb-1.5">
                   <span className="font-heading text-xl font-bold shrink-0 w-8" style={{ color }}>{rank}</span>
+                  <span
+                    className="font-body text-sm font-bold px-2 py-0.5 rounded shrink-0"
+                    style={{ backgroundColor: `${color}22`, color }}
+                  >
+                    {cod}
+                  </span>
                   <span className="font-body text-lg font-bold flex-1" style={{ color: 'var(--text)' }}>{nombre}</span>
+                  <span
+                    className="font-body text-xs px-2 py-0.5 rounded-full shrink-0"
+                    style={{ backgroundColor: `${color}18`, color }}
+                  >
+                    {fase}
+                  </span>
                   <span className="font-heading text-2xl font-bold shrink-0" style={{ color }}>
                     {score}<span className="text-base font-body opacity-50">/{max}</span>
                   </span>
                 </div>
-                {/* Progress bar */}
                 <div className="h-1.5 rounded-full mb-1.5" style={{ backgroundColor: 'var(--border)' }}>
                   <div
-                    className="h-full rounded-full transition-all"
+                    className="h-full rounded-full"
                     style={{ width: `${pct}%`, backgroundColor: color }}
                   />
                 </div>
@@ -112,24 +133,24 @@ export default function E08MatrizFactibilidad() {
             <p className="font-body text-xs uppercase tracking-widest text-center mb-3" style={{ color: 'var(--text-label)' }}>
               12 criterios · 4 dimensiones
             </p>
-            {TIPOS.map(({ label, criterios, ponderacion }) => (
+            {TIPOS.map(({ label, ponderacion, color }) => (
               <div
                 key={label}
                 className="flex items-center justify-between rounded-lg px-4 py-2.5 border"
-                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)', borderLeftColor: color, borderLeftWidth: '3px' }}
               >
                 <div>
                   <p className="font-body text-base font-bold" style={{ color: 'var(--text)' }}>{label}</p>
                   <p className="font-body text-sm" style={{ color: 'var(--text-label)' }}>{ponderacion}</p>
                 </div>
-                <span className="font-heading text-lg font-bold text-duoc-blue">{criterios}</span>
+                <span className="font-heading text-lg font-bold" style={{ color }}>3</span>
               </div>
             ))}
             <div
               className="rounded-lg px-4 py-2.5 border text-center mt-2"
               style={{ backgroundColor: 'rgba(48,127,226,0.06)', borderColor: 'rgba(48,127,226,0.25)' }}
             >
-              <p className="font-body text-xs" style={{ color: 'var(--text-label)' }}>
+              <p className="font-body text-sm" style={{ color: 'var(--text-label)' }}>
                 6 Relevantes · 4 Neutrales · 2 Marginales
               </p>
             </div>

@@ -3,21 +3,24 @@ import SlideLayout from '../../slides/SlideLayout'
 const CRITERIOS = [
   {
     num: '01',
-    titulo: 'Gestión del Cambio con Gremios de Salud',
-    detalle: 'FENATS y CONFUSAM poseen capacidad real de paralizar la operación. Todo cambio en flujos de trabajo debe ser co-diseñado con los funcionarios antes del despliegue, no después.',
-    impacto: '2.800 funcionarios en la red — adhesión gremial es condición previa.',
+    ponderacion: 'Relevante',
+    titulo: 'Plan de gestión del cambio con funcionarios',
+    detalle: '¿Existe un plan de co-diseño activo con los funcionarios que operarán el módulo? FENATS y CONFUSAM tienen capacidad real de paralizar la operación. El SOME —usuario directo de M1 y M2— debe co-diseñar los flujos antes del despliegue, no después.',
+    impacto: '2.800 funcionarios en la red — adhesión gremial es condición previa a cualquier módulo.',
   },
   {
     num: '02',
-    titulo: 'Estrategia para la Brecha Digital',
-    detalle: 'El 72% de los pacientes desconoce su posición en la lista de espera. Se requieren canales asistidos (kioskos, IVR, SMS) como componentes del sistema, no funcionalidades secundarias.',
-    impacto: 'Sin enrolamiento asistido, el Portal del Paciente no cumple su promesa de transparencia.',
+    ponderacion: 'Neutral',
+    titulo: 'Viabilidad en el plazo de 12 meses',
+    detalle: '¿El módulo puede completarse dentro del plazo establecido para el proyecto EDGDA? M3 (Hub de Interoperabilidad) es el único que presenta riesgo real de superar el plazo por su dependencia de la cooperación del proveedor SIDRA.',
+    impacto: 'El cronograma de Fase 2 depende de que el SLA con el proveedor SIDRA esté firmado antes de iniciar M3.',
   },
   {
     num: '03',
-    titulo: 'Adhesión del Personal SOME',
-    detalle: 'Los errores de registro del personal administrativo son la causa directa del 12–18% de pérdida de horas médicas. Su adopción del sistema es tan crítica como la implementación técnica.',
-    impacto: 'Nodo de calidad de datos más importante de la red asistencial.',
+    ponderacion: 'Marginal',
+    titulo: 'Estrategia para reducir la brecha digital',
+    detalle: '¿El módulo contempla canales alternativos para la población sin acceso digital? El 72% de los pacientes desconoce su posición en la lista. M4 (Portal) no cumplirá su mandato legal sin kioskos asistidos, IVR y enrolamiento presencial diferenciado para zonas extremas.',
+    impacto: 'M2 y M4 deben incluir IVR y SMS como canales de primer nivel, no como funcionalidades secundarias.',
   },
 ]
 
@@ -32,7 +35,7 @@ export default function E05CriteriosOrganizacionales() {
       statColor="#FFB800"
     >
       <div className="space-y-4">
-        {CRITERIOS.map(({ num, titulo, detalle, impacto }) => (
+        {CRITERIOS.map(({ num, ponderacion, titulo, detalle, impacto }) => (
           <div
             key={num}
             className="rounded-lg px-5 py-4 border"
@@ -46,7 +49,10 @@ export default function E05CriteriosOrganizacionales() {
             <div className="flex gap-4">
               <span className="shrink-0 font-heading text-xl font-bold opacity-30 w-8" style={{ color: '#FFB800' }}>{num}</span>
               <div>
-                <p className="font-body text-xl font-bold mb-1" style={{ color: 'var(--text)' }}>{titulo}</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="font-body text-xl font-bold" style={{ color: 'var(--text)' }}>{titulo}</p>
+                  <span className="font-body text-xs px-2 py-0.5 rounded-full shrink-0" style={{ backgroundColor: '#FFB80022', color: '#FFB800' }}>{ponderacion}</span>
+                </div>
                 <p className="font-body text-lg leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>{detalle}</p>
                 <p className="font-body text-base font-bold" style={{ color: '#FFB800' }}>
                   → {impacto}

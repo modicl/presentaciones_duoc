@@ -1,20 +1,33 @@
 import SlideLayout from '../../slides/SlideLayout'
 
-const RAZONES = [
+const FASES = [
   {
-    num: '01',
-    titulo: 'Control normativo total',
-    desc: 'Conserva todas las ventajas del desarrollo In-House: cumplimiento directo de Leyes 19.628, 20.584 y 21.663 desde el diseño base.',
+    fase: 'Fase 1',
+    modulos: 'M1 + M2',
+    color: '#43B02A',
+    titulo: 'Motor de Priorización + Gestor de Reasignación',
+    desc: 'Módulos de mayor viabilidad (74 y 73/84) y mayor impacto operativo inmediato. Generan resultados medibles antes de comprometer presupuesto en los módulos de mayor riesgo.',
   },
   {
-    num: '02',
-    titulo: 'Gestión de riesgo por fases',
-    desc: 'Distribuye la inversión en dos fases verificables, reduciendo la dependencia del presupuesto fiscal de un solo año — el principal riesgo institucional.',
+    fase: 'Fase 2a',
+    modulos: 'M4',
+    color: '#307FE2',
+    titulo: 'Portal de Autogestión del Paciente',
+    desc: 'Primera entrega de Fase 2. Mandato legal de la Ley 20.584 — cumplimiento obligatorio. Menor costo de desarrollo y mayor impacto ciudadano visible.',
   },
   {
-    num: '03',
-    titulo: 'Adaptabilidad al contexto RedNorte',
-    desc: 'La dispersión geográfica, el perfil epidemiológico minero y la brecha digital rural se incorporan como requerimientos de primer orden en cada fase.',
+    fase: 'Fase 2b',
+    modulos: 'M3',
+    color: '#E53E3E',
+    titulo: 'Hub de Interoperabilidad HL7 FHIR',
+    desc: 'Condicionado a que el SLA con el proveedor SIDRA esté firmado y el proceso CENS iniciado. El puntaje bajo (59/84) no indica inviabilidad: indica precondiciones contractuales no técnicas.',
+  },
+  {
+    fase: 'Fase 2c',
+    modulos: 'M5',
+    color: '#FFB800',
+    titulo: 'Analytics de Capacidad Asistencial',
+    desc: 'Última entrega. Su valor estratégico depende de que M1 y M2 estén generando datos de calidad. Sin esa base, cualquier inversión en analytics es prematura.',
   },
 ]
 
@@ -22,41 +35,31 @@ export default function E09Conclusiones() {
   return (
     <SlideLayout
       label="Conclusiones"
-      title="Opción Recomendada"
-      stat="74/84"
-      statLabel="Incremental Priorizado"
+      title="Secuencia de Implementación"
+      stat="M1·M2"
+      statLabel="Prioridad Fase 1 · 147 pts combinados"
       statColor="#43B02A"
       accentColor="#43B02A"
     >
-      <div className="space-y-3 mb-4">
-        <div
-          className="rounded-lg px-5 py-3 border"
-          style={{ backgroundColor: 'rgba(67,176,42,0.06)', borderColor: 'rgba(67,176,42,0.3)' }}
-        >
-          <p className="font-body text-sm uppercase tracking-widest mb-1" style={{ color: '#43B02A' }}>
-            Opción 3 — Desarrollo Incremental Priorizado
-          </p>
-          <p className="font-body text-lg" style={{ color: 'var(--text)' }}>
-            Fase 1 (meses 1–8): Motor de Priorización + Gestor de Reasignación en 4 hospitales.<br />
-            Fase 2 (meses 9–12): Portal del Paciente + Analytics + 12 CESFAM.
-          </p>
-        </div>
-
-        {RAZONES.map(({ num, titulo, desc }) => (
+      <div className="space-y-2.5 mb-4">
+        {FASES.map(({ fase, modulos, color, titulo, desc }) => (
           <div
-            key={num}
-            className="flex gap-4 rounded-lg px-5 py-3 border"
+            key={fase}
+            className="flex gap-3 rounded-lg px-4 py-3 border"
             style={{
               backgroundColor: 'var(--bg-card)',
               borderColor: 'var(--border)',
-              borderLeftColor: '#43B02A',
+              borderLeftColor: color,
               borderLeftWidth: '3px',
             }}
           >
-            <span className="shrink-0 font-heading text-xl font-bold opacity-30 w-8" style={{ color: '#43B02A' }}>{num}</span>
-            <div>
-              <p className="font-body text-lg font-bold mb-0.5" style={{ color: 'var(--text)' }}>{titulo}</p>
-              <p className="font-body text-base leading-relaxed" style={{ color: 'var(--text-muted)' }}>{desc}</p>
+            <div className="shrink-0 text-center w-16">
+              <p className="font-body text-xs font-bold uppercase" style={{ color }}>{fase}</p>
+              <p className="font-heading text-base font-bold" style={{ color }}>{modulos}</p>
+            </div>
+            <div className="min-w-0">
+              <p className="font-body text-base font-bold mb-0.5" style={{ color: 'var(--text)' }}>{titulo}</p>
+              <p className="font-body text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{desc}</p>
             </div>
           </div>
         ))}
@@ -66,10 +69,10 @@ export default function E09Conclusiones() {
         className="rounded-lg px-6 py-4 border"
         style={{ backgroundColor: 'var(--bg-card)', borderColor: 'rgba(67,176,42,0.3)' }}
       >
-        <p className="font-heading text-lg font-bold leading-relaxed italic" style={{ color: 'var(--text-muted)' }}>
-          "El proyecto EDGDA es técnicamente factible, normativamente alineado y socialmente urgente. Su ejecución permitirá a RedNorte garantizar{' '}
-          <span className="not-italic" style={{ color: '#43B02A' }}>atención oportuna, digna y transparente</span>{' '}
-          a la población del norte de Chile."
+        <p className="font-heading text-base font-bold leading-relaxed italic" style={{ color: 'var(--text-muted)' }}>
+          "El ecosistema EDGDA es técnicamente factible, normativamente urgente y socialmente necesario.{' '}
+          <span className="not-italic" style={{ color: '#43B02A' }}>La evaluación módulo a módulo permite gestionar el riesgo de forma transparente</span>{' '}
+          y priorizar la inversión donde el impacto es mayor."
         </p>
       </div>
     </SlideLayout>

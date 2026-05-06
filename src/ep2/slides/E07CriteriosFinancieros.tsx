@@ -3,23 +3,26 @@ import SlideLayout from '../../slides/SlideLayout'
 const CRITERIOS = [
   {
     num: '01',
-    titulo: 'Modelo de Inversión — CAPEX vs OPEX',
-    detalle: 'Las opciones in-house concentran el gasto inicial (CAPEX alto) con costos operativos predecibles. Las opciones SaaS distribuyen el gasto en el tiempo (OPEX) pero generan costos recurrentes permanentes.',
-    impacto: 'In-House: mayor CAPEX año 1. SaaS: menor CAPEX, mayor OPEX perpetuo.',
+    ponderacion: 'Relevante',
+    titulo: 'Costo sostenible dentro del presupuesto fiscal',
+    detalle: '¿La inversión requerida por el módulo es manejable dentro del presupuesto fiscal disponible de RedNorte? M1 (Motor de Priorización) es el de mayor inversión en Fase 1, pero con ROI inmediatamente medible: reducción del tiempo de espera en especialidades críticas.',
+    impacto: 'M3 requiere presupuesto de contingencia específico — su plazo es incierto y no debe comprometerse en Fase 1.',
     color: '#43B02A',
   },
   {
     num: '02',
-    titulo: 'Dependencia del Ciclo Presupuestario Fiscal',
-    detalle: 'RedNorte carece de financiamiento plurianual garantizado. La ausencia de presupuesto para la Fase 2 puede dejar la Fase 1 incompleta e inoperante. Riesgo institucional, no solo financiero.',
-    impacto: 'Opciones incrementales y de consorcio mitigan este riesgo mejor que el desarrollo total en año 1.',
+    ponderacion: 'Neutral',
+    titulo: 'Modelo OPEX/CAPEX sostenible a largo plazo',
+    detalle: '¿Los costos de operación y mantenimiento son proyectables y sostenibles? M2 (Reasignación Multicanal) tiene bajo CAPEX de desarrollo pero costos recurrentes por mensaje SMS/IVR que deben proyectarse en el modelo OPEX anual del Servicio.',
+    impacto: 'RedNorte carece de financiamiento plurianual garantizado — los módulos con OPEX recurrente son los más expuestos.',
     color: '#43B02A',
   },
   {
     num: '03',
-    titulo: 'Riesgo de Vendor Lock-in',
-    detalle: 'La dependencia de un proveedor externo expone al proyecto a cambios unilaterales de precio, condiciones de servicio o discontinuación de la plataforma sin posibilidad de migración económica.',
-    impacto: 'SaaS: riesgo máximo. Open Source e In-House: riesgo nulo. Consorcio: riesgo bajo.',
+    ponderacion: 'Marginal',
+    titulo: 'Riesgo de dependencia de proveedores externos',
+    detalle: '¿El módulo minimiza el vendor lock-in? Los módulos desarrollados con estándares abiertos (HL7 FHIR, APIs REST, herramientas BI open source) son migrables sin fricción económica. M3 en particular debe diseñarse sin dependencia de un único proveedor de integración.',
+    impacto: 'Alta dependencia de un proveedor único haría inviable cualquier migración futura sin pérdida de datos.',
     color: '#43B02A',
   },
 ]
@@ -35,7 +38,7 @@ export default function E07CriteriosFinancieros() {
       statColor="#43B02A"
     >
       <div className="space-y-4">
-        {CRITERIOS.map(({ num, titulo, detalle, impacto, color }) => (
+        {CRITERIOS.map(({ num, ponderacion, titulo, detalle, impacto, color }) => (
           <div
             key={num}
             className="rounded-lg px-5 py-4 border"
@@ -49,7 +52,10 @@ export default function E07CriteriosFinancieros() {
             <div className="flex gap-4">
               <span className="shrink-0 font-heading text-xl font-bold opacity-30 w-8" style={{ color }}>{num}</span>
               <div>
-                <p className="font-body text-xl font-bold mb-1" style={{ color: 'var(--text)' }}>{titulo}</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="font-body text-xl font-bold" style={{ color: 'var(--text)' }}>{titulo}</p>
+                  <span className="font-body text-xs px-2 py-0.5 rounded-full shrink-0" style={{ backgroundColor: `${color}22`, color }}>{ponderacion}</span>
+                </div>
                 <p className="font-body text-lg leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>{detalle}</p>
                 <p className="font-body text-base font-bold" style={{ color }}>
                   → {impacto}

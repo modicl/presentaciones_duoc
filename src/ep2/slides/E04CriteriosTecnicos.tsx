@@ -3,21 +3,24 @@ import SlideLayout from '../../slides/SlideLayout'
 const CRITERIOS = [
   {
     num: '01',
-    titulo: 'Interoperabilidad HL7 FHIR + Certificación CENS',
-    detalle: 'El sistema debe integrarse con SIDRA/MINSAL bajo HL7 FHIR. Sin certificación CENS, la solución opera en aislamiento total — requisito no negociable.',
-    obstaculo: 'Proveedores de sistemas legados controlan APIs y pueden obstaculizar la integración.',
+    ponderacion: 'Relevante',
+    titulo: 'Herramientas técnicas y expertise del equipo',
+    detalle: '¿El equipo dispone de las herramientas, infraestructura y perfiles especializados para desarrollar el módulo? La escasez de talento en microservicios, HL7 FHIR y seguridad en salud es el principal obstáculo diferencial de RedNorte frente a otras regiones.',
+    obstaculo: 'Competencia salarial con la industria minera genera "brain drain" técnico constante.',
   },
   {
     num: '02',
-    titulo: 'Operación Offline en Zonas Extremas',
-    detalle: 'La dispersión del Desierto de Atacama exige capacidad de operación desconectada con sincronización diferida.',
-    obstaculo: '58% de inasistencias se atribuye a fallas de comunicación en campamentos y localidades rurales.',
+    ponderacion: 'Relevante',
+    titulo: 'Integración con SIDRA bajo HL7 FHIR',
+    detalle: '¿El módulo puede integrarse con SIDRA bajo el estándar HL7 FHIR del MINSAL y obtener la certificación CENS? Sin ella, el módulo opera en aislamiento total — requisito determinante para cualquier entrega.',
+    obstaculo: 'Proveedores legados controlan APIs. Formalizar SLAs con penalidades es condición previa.',
   },
   {
     num: '03',
-    titulo: 'Disponibilidad de Talento Técnico Especializado',
-    detalle: 'Se requieren perfiles con experiencia en microservicios, HL7 FHIR y seguridad en salud.',
-    obstaculo: 'Competencia salarial con la industria minera privada genera "brain drain" técnico constante.',
+    ponderacion: 'Neutral',
+    titulo: 'Operación offline y alta disponibilidad',
+    detalle: '¿El módulo puede operar en modo desconectado y garantizar uptime ≥99,9% en nodos remotos? El 58% de las inasistencias se atribuye a fallas de comunicación en campamentos y localidades rurales.',
+    obstaculo: 'Sin modo offline, los módulos de reasignación y priorización no operarán donde más se necesitan.',
   },
 ]
 
@@ -30,7 +33,7 @@ export default function E04CriteriosTecnicos() {
       statLabel="criterios técnicos evaluados"
     >
       <div className="space-y-4">
-        {CRITERIOS.map(({ num, titulo, detalle, obstaculo }) => (
+        {CRITERIOS.map(({ num, ponderacion, titulo, detalle, obstaculo }) => (
           <div
             key={num}
             className="rounded-lg px-5 py-4 border"
@@ -44,7 +47,10 @@ export default function E04CriteriosTecnicos() {
             <div className="flex gap-4">
               <span className="shrink-0 font-heading text-xl font-bold text-duoc-blue opacity-30 w-8">{num}</span>
               <div>
-                <p className="font-body text-xl font-bold mb-1" style={{ color: 'var(--text)' }}>{titulo}</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="font-body text-xl font-bold" style={{ color: 'var(--text)' }}>{titulo}</p>
+                  <span className="font-body text-xs px-2 py-0.5 rounded-full shrink-0" style={{ backgroundColor: '#307FE222', color: '#307FE2' }}>{ponderacion}</span>
+                </div>
                 <p className="font-body text-lg leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>{detalle}</p>
                 <p className="font-body text-base" style={{ color: '#FFB800' }}>
                   ⚠ Obstáculo: {obstaculo}
