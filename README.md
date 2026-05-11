@@ -63,3 +63,55 @@ El proyecto es de arquitectura puramente Frontend de alta modernidad.
 - **[Vite](https://vitejs.dev/):** Entorno y empaquetamiento altamente optimizado y veloz.
 - **[TypeScript](https://www.typescriptlang.org/):** Base sólida enfocada en tipado robusto.
 - **[Tailwind CSS](https://tailwindcss.com/):** Estilos reactivos y clases estéticas para un diseño ágil de UI.
+
+---
+
+## 🤖 Usar este template con un agente LLM
+
+Este repositorio incluye un **skill** en `skills/duoc-presentacion-template/SKILL.md` pensado para que cualquier alumno Duoc UC pueda usar un agente LLM para crear su propia presentación basada en este template, sin tener que leer todo el código.
+
+El skill documenta: tipografía, tokens de color, variables CSS del tema, colores sugeridos por escuela, patrones de slides y flujo de exportación PDF.
+
+### Con Claude Code
+
+**Opción 1 — Leerlo directamente en la conversación:**
+
+```
+Lee el archivo skills/duoc-presentacion-template/SKILL.md y úsalo como referencia para crear una presentación nueva para la Escuela de [tu escuela].
+```
+
+**Opción 2 — Instalarlo como skill permanente** (disponible en cualquier proyecto):
+
+```bash
+# macOS / Linux
+cp -r skills/duoc-presentacion-template ~/.claude/skills/
+
+# Windows (PowerShell)
+Copy-Item -Recurse skills\duoc-presentacion-template "$env:USERPROFILE\.claude\skills\"
+```
+
+Una vez instalado, puedes invocarlo en cualquier proyecto escribiendo en el chat:
+
+```
+/duoc-presentacion-template
+```
+
+O pedirle al agente que lo use:
+
+```
+Usa el skill duoc-presentacion-template para crear una presentación para la asignatura Diseño de Bases de Datos.
+```
+
+### Con otros agentes (Gemini CLI, Cursor, Copilot, etc.)
+
+El skill es Markdown estándar, compatible con cualquier LLM:
+
+```
+Lee el archivo skills/duoc-presentacion-template/SKILL.md.
+Necesito crear una presentación para [nombre asignatura] de la Escuela de [tu escuela].
+Usa el color #[tu color] como accentColor principal.
+```
+
+### Contribuir colores oficiales
+
+Si conoces el color oficial de tu escuela Duoc UC, abre un PR actualizando la tabla de colores en `skills/duoc-presentacion-template/SKILL.md` — los valores actuales son aproximados excepto el azul y el amarillo institucional.
