@@ -55,6 +55,21 @@ El sistema está diseñado para ser de fácil lectura y transición en forma de 
 
 ---
 
+## 🎨 Diseño y Branding
+
+El sistema visual de este template está construido íntegramente sobre el **Kit Digital oficial de Duoc UC**:
+**[duoc.cl/kit-digital/web/tipografia-colores](https://www.duoc.cl/kit-digital/web/tipografia-colores/)**
+
+Esto incluye:
+- **Tipografías:** Merriweather (serif, headings) y Lato (sans-serif, body) — las dos familias tipográficas institucionales de Duoc UC
+- **Colores institucionales:** Negro `#1A1A1A`, Blanco `#FFFFFF`, Amarillo `#FFB800` — paleta primaria oficial
+- **Colores por escuela:** Los 9 colores de escuela con sus valores Pantone exactos (Informática `#307FE2`, Administración `#AC4FC6`, Comunicación `#D50032`, Construcción `#E87722`, Diseño `#C4D600`, Gastronomía `#FF585D`, Ingeniería `#43B02A`, Salud `#5BC2E7`, Turismo `#00A499`)
+- **Escala tipográfica:** Tamaños rem definidos en el kit (h1 2.6875rem → body 1rem → small 0.8125rem)
+
+Todo está documentado con referencias exactas en el skill: `skills/duoc-presentacion-template/SKILL.md`.
+
+---
+
 ## 🛠️ Stack Tecnológico
 
 El proyecto es de arquitectura puramente Frontend de alta modernidad.
