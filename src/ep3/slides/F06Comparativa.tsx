@@ -15,7 +15,7 @@ const ALTS = [
     tir: '71,03%',
     pri: '2 a. 0 m. 7 d.',
     inv: '$1.350M',
-    financ: 'MINSAL/FNDR · $700M',
+    financ: 'Préstamo bancario · $700M',
     puntos: [
       'M1 y M3 desarrollo interno · M2, M4, M5 Low-Code',
       'Distribuye riesgo tecnológico entre equipos',
@@ -51,7 +51,7 @@ const ALTS = [
     tir: 'Sin solución',
     pri: 'No recupera',
     inv: '$1.330M',
-    financ: 'MINSAL/FNDR · $450M',
+    financ: 'Préstamo bancario · $450M',
     puntos: [
       'Costos fijos $16.670,6M/año superan ingresos FONASA',
       'Déficit acumulado -$9.295M en 5 años',
