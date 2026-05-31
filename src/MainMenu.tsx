@@ -18,7 +18,7 @@ export default function MainMenu() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <a
             href="?presentation=ev-proyectos"
             className="group relative flex flex-col items-start p-8 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl text-left"
@@ -69,10 +69,34 @@ export default function MainMenu() {
           </a>
 
           <a
+            href="?presentation=ep3"
+            className="group relative flex flex-col items-start p-8 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl text-left"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            <div className="h-12 w-12 rounded-xl flex items-center justify-center mb-6 font-bold group-hover:scale-110 transition-transform" style={{ backgroundColor: 'rgba(16,185,129,0.2)', color: '#10B981' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h2 className="font-heading text-xl font-bold mb-3" style={{ color: 'var(--text)' }}>
+              Evaluación de Proyectos
+            </h2>
+            <p className="font-body text-sm" style={{ color: 'var(--text-muted)' }}>
+              Presentación EP3 - Evaluación Económica Financiera
+            </p>
+            <div className="mt-6 flex items-center text-sm font-semibold group-hover:gap-2 transition-all" style={{ color: '#10B981' }}>
+              Ver presentación <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            </div>
+          </a>
+
+          <a
             href="?presentation=prisma"
             className="group relative flex flex-col items-start p-8 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl text-left"
-            style={{ 
-              backgroundColor: 'var(--bg-card)', 
+            style={{
+              backgroundColor: 'var(--bg-card)',
               borderColor: 'var(--border)',
             }}
           >
