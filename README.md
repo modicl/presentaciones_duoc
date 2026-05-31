@@ -11,6 +11,7 @@ Actualmente el repositorio alberga el material de las siguientes asignaturas:
 1. **Evaluación de Proyectos**
    - **EP1** — Caso de Estudio: Servicio Público de Salud RedNorte. Analiza el diseño de un ecosistema digital (EDGDA), incluyendo análisis de Porter, PESTEL, objetivos, arquitectura de solución y stakeholders.
    - **EP2** — Evaluación de Alternativas de Desarrollo. Presenta los criterios de factibilidad técnica, organizacional, normativa/legal y financiera aplicados al sistema EDGDA, con cinco opciones de desarrollo evaluadas mediante una Matriz de Factibilidad de 12 criterios y 84 puntos máximos.
+   - **EP3** — Evaluación Económica Financiera. Desarrolla los flujos de caja de tres alternativas de implementación (Mixta, Inhouse, Low-Code), simulación de préstamo bajo sistema francés de amortización, y cálculo de indicadores VAN, TIR y PRI. Recomendación fundamentada por maximización de valor neto para RedNorte. Activar con `?presentation=ep3`.
    - **Docente:** Andrés Santoro Del Campo
 
 2. **Fullstack III**
@@ -78,6 +79,7 @@ El proyecto es de arquitectura puramente Frontend de alta modernidad.
 - **[Vite](https://vitejs.dev/):** Entorno y empaquetamiento altamente optimizado y veloz.
 - **[TypeScript](https://www.typescriptlang.org/):** Base sólida enfocada en tipado robusto.
 - **[Tailwind CSS](https://tailwindcss.com/):** Estilos reactivos y clases estéticas para un diseño ágil de UI.
+- **[Framer Motion](https://www.framer.com/motion/):** Animaciones de layout fluidas (usado en EP3 para la transición de alternativas).
 
 ---
 
