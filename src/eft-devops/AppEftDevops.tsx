@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import duocLogo from '../assets/Logo_DuocUC.svg'
 import D01Portada from './slides/D01Portada'
 import D02Arquitectura from './slides/D02Arquitectura'
-import D03Integracion from './slides/D03Integracion'
 import D04Contenedores from './slides/D04Contenedores'
 import D05Compose from './slides/D05Compose'
 import D06RegistroEcr from './slides/D06RegistroEcr'
@@ -16,7 +15,6 @@ import D12Cierre from './slides/D12Cierre'
 const SLIDES = [
   { component: D01Portada,       label: 'Portada' },
   { component: D02Arquitectura,  label: 'Arquitectura · IE1' },
-  { component: D03Integracion,   label: 'Integración · IE1' },
   { component: D04Contenedores,  label: 'Contenedores · IE2' },
   { component: D05Compose,       label: 'Docker Compose · IE2' },
   { component: D06RegistroEcr,   label: 'Registro ECR · IE3' },
