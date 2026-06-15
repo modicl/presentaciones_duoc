@@ -117,6 +117,30 @@ export default function MainMenu() {
               Ver presentación <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
             </div>
           </a>
+
+          <a
+            href="?presentation=eft-devops"
+            className="group relative flex flex-col items-start p-8 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl text-left"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            <div className="h-12 w-12 rounded-xl flex items-center justify-center mb-6 font-bold group-hover:scale-110 transition-transform" style={{ backgroundColor: 'rgba(48,127,226,0.2)', color: '#307FE2' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+              </svg>
+            </div>
+            <h2 className="font-heading text-xl font-bold mb-3" style={{ color: 'var(--text)' }}>
+              Introducción a Herramientas DevOps
+            </h2>
+            <p className="font-body text-sm" style={{ color: 'var(--text-muted)' }}>
+              EFT - CI/CD y Despliegue en AWS (P.R.I.S.M.A.)
+            </p>
+            <div className="mt-6 flex items-center text-sm font-semibold group-hover:gap-2 transition-all" style={{ color: '#307FE2' }}>
+              Ver presentación <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            </div>
+          </a>
         </div>
       </div>
 
