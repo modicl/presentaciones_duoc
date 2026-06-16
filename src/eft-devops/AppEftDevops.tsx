@@ -6,6 +6,7 @@ import D04Contenedores from './slides/D04Contenedores'
 import D05Compose from './slides/D05Compose'
 import D06RegistroEcr from './slides/D06RegistroEcr'
 import D07Pipeline from './slides/D07Pipeline'
+import D07bVpcEgress from './slides/D07bVpcEgress'
 import D08InfraAws from './slides/D08InfraAws'
 import D09Orquestacion from './slides/D09Orquestacion'
 import D10Seguridad from './slides/D10Seguridad'
@@ -20,6 +21,7 @@ const SLIDES = [
   { component: D06RegistroEcr,   label: 'Registro ECR · IE3' },
   { component: D07Pipeline,      label: 'Pipeline CI/CD · IE3' },
   { component: D08InfraAws,      label: 'Infraestructura AWS · IE4' },
+  { component: D07bVpcEgress,    label: 'VPC con egress externo · IE3' },
   { component: D09Orquestacion,  label: 'Orquestación y Escalado · IE4' },
   { component: D10Seguridad,     label: 'Seguridad y Secretos' },
   { component: D11Observabilidad,label: 'Observabilidad · IE5' },
