@@ -21,12 +21,12 @@ export default function D01Portada() {
         </h2>
         <p className="font-body text-xl mb-6" style={{ color: 'var(--text-muted)' }}>
           Automatización del ciclo de integración y entrega continua de la
-          plataforma <span className="font-bold text-duoc-blue">P.R.I.S.M.A.</span> sobre AWS
+          plataforma <span className="font-bold text-duoc-blue">Innovatech Chile</span> sobre AWS
         </p>
 
         {/* Stack chips */}
         <div className="flex flex-wrap gap-2 mb-6">
-          {['Docker', 'GitHub Actions', 'Amazon ECR', 'ECS Fargate', 'CloudWatch'].map(t => (
+          {['Docker', 'GitHub Actions', 'Amazon ECR', 'ECS Fargate', 'ALB', 'MariaDB', 'CloudWatch'].map(t => (
             <span
               key={t}
               className="font-body text-xs px-3 py-1 rounded-full border"
@@ -45,8 +45,8 @@ export default function D01Portada() {
         <div className="font-body space-y-2">
           <p className="font-bold text-base" style={{ color: 'var(--text-muted)' }}>Integrantes</p>
           <div className="grid grid-cols-2 gap-x-10 gap-y-1.5 text-lg" style={{ color: 'var(--text-label)' }}>
-            <span>Felipe Villarroel</span>
-            <span>Javier Arancibia</span>
+            <span>Danilo Quiroz</span>
+            <span>Luciano Riveros</span>
           </div>
           <p className="text-sm pt-2" style={{ color: 'var(--text-dim)' }}>
             Evaluación Final Transversal (EFT) &nbsp;·&nbsp; Docente: Javier Esteban Peña Reyes

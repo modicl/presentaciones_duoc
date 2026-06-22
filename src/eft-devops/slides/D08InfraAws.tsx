@@ -1,10 +1,10 @@
 import SlideLayout from '../../slides/SlideLayout'
 
 const POINTS = [
-  ['VPC y subred', 'Se usa la VPC default con subred pública; la task recibe IP pública para pull de ECR y salida a internet.'],
-  ['Security Group', 'prisma-sg con inbound solo TCP 80. El outbound (stateful) queda abierto → los backends alcanzan Gemini, Supabase y S3.'],
-  ['Plataforma', 'ECS con Fargate: sin servidores EC2 que administrar. Sin ALB; el front expone el :80 por IP pública.'],
-  ['Servicios AWS', 'VPC · ECS · ECR · IAM · CloudWatch interactúan en una sola cuenta del Learner Lab.'],
+  ['Cómputo', 'Amazon ECS con Fargate: un cluster por servicio (3 en total) en la VPC de us-east-1; subredes públicas con IP pública (Academy no tiene NAT).'],
+  ['Balanceo', 'Un ALB internet-facing enruta por path; target groups de tipo IP (tg-front:80, tg-backjs:8081, tg-backpy:8082), obligatorios en Fargate.'],
+  ['Base de datos', 'EC2 con MariaDB (Amazon Linux 2023) por IP privada; en Academy no hay permisos para RDS. Bases users_db y products_db.'],
+  ['IAM e identidad', 'Rol LabRole como task execution role y task role (Academy no permite iam:CreateRole), con permisos mínimos para ECR y CloudWatch.'],
 ]
 
 export default function D08InfraAws() {

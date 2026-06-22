@@ -1,10 +1,10 @@
 import SlideLayout from '../../slides/SlideLayout'
 
 const POINTS = [
-  ['Un comando', 'docker compose up --build levanta los 6 componentes juntos para el entorno de desarrollo local.'],
-  ['Redes internas', 'Compose crea una red bridge donde cada servicio es resoluble por su nombre (users:3001, workflow:8000, …).'],
-  ['Config por servicio', 'env_file inyecta el .env de cada repo; environment hace overrides puntuales (URLs servicio→servicio).'],
-  ['Paridad con prod', 'Las mismas imágenes que se construyen desde estos Dockerfile son las que se publican en ECR y corren en ECS.'],
+  ['Un comando', 'docker compose up --build levanta los tres servicios junto a la base de datos MariaDB para el entorno de desarrollo local.'],
+  ['Red interna', 'Compose crea una red bridge compartida donde cada servicio es resoluble por su nombre (front, backjs, backpy, db).'],
+  ['Config y persistencia', 'Las credenciales se pasan por variables de entorno y la base de datos persiste sus datos en un volumen.'],
+  ['Paridad con prod', 'Las mismas imágenes que se construyen desde estos Dockerfile son las que se publican en ECR y corren en ECS Fargate.'],
 ]
 
 export default function D05Compose() {
@@ -12,8 +12,8 @@ export default function D05Compose() {
     <SlideLayout
       label="Contenedores · IE2"
       title="Orquestación local"
-      stat="6"
-      statLabel="servicios en una red"
+      stat="3+1"
+      statLabel="servicios + base de datos"
       accentColor="#307FE2"
       statColor="#307FE2"
     >

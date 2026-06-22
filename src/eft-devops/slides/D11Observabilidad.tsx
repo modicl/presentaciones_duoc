@@ -1,10 +1,10 @@
 import SlideLayout from '../../slides/SlideLayout'
 
 const POINTS = [
-  ['Logs del pipeline', 'Cada ejecución de GitHub Actions deja el log por paso: build, push a ECR (con su digest) y redeploy de ECS.'],
-  ['Logs de la nube', 'Los contenedores envían sus logs a CloudWatch Logs mediante el driver awslogs de la task.'],
-  ['Métricas básicas', 'CloudWatch expone CPU y memoria del servicio ECS — base del auto-scaling y evidencia de monitoreo.'],
-  ['App funcional', 'Sistema accesible por la IP pública de la task: login, carga de PACI y flujo agéntico end-to-end.'],
+  ['Logs del pipeline', 'La pestaña Actions de GitHub deja el log por etapa: build, test, push a ECR y deploy a ECS terminan en verde.'],
+  ['Logs de la nube', 'Las tareas envían sus logs a CloudWatch (/ecs/devops-front-ep3, -backjs-ep3, -backpy-ep3); ahí se confirma "Connected to MySQL database".'],
+  ['Métricas', 'CPU y memoria de ECS (base del auto-scaling) y del ALB: RequestCount, TargetResponseTime y HealthyHostCount por target group.'],
+  ['App funcional', 'Flujo end-to-end probado front → ALB → backend → MariaDB; los 3 servicios quedan healthy y se recuperan tras un redeploy.'],
 ]
 
 export default function D11Observabilidad() {

@@ -2,17 +2,17 @@ const CARDS = [
   {
     t: 'Desplegar',
     c: '#307FE2',
-    items: ['Task definition + service prisma-app', '1 task con los 6 contenedores', 'Comunicación por localhost (awsvpc)'],
+    items: ['Una task definition por servicio', 'Un cluster ECS por servicio (3 en total)', 'Target groups tipo IP registrados en el ALB'],
   },
   {
     t: 'Gestionar',
     c: '#FFB800',
-    items: ['Consola ECS: tasks y revisiones', 'force-new-deployment (rolling)', 'desiredCount 0 ↔ 1 = prender/apagar'],
+    items: ['Consola ECS: tasks y revisiones', 'force-new-deployment (rolling)', 'Auto-recuperación tras fallo del health check'],
   },
   {
     t: 'Escalar',
     c: '#43B02A',
-    items: ['Service Auto Scaling (target tracking)', 'CPU 70% · min 0 / max 3', 'Cooldown 60s · escala 1 → 2 → 3'],
+    items: ['Service Auto Scaling (target tracking)', 'CPU promedio 50% · min 1 / max 4', 'Cooldown out 60s / in 120s'],
   },
 ]
 
@@ -28,8 +28,7 @@ export default function D09Orquestacion() {
         ECS Fargate: desplegar, gestionar, escalar
       </h2>
       <p className="font-body text-base mb-8" style={{ color: 'var(--text-label)' }}>
-        Clúster <span className="font-mono text-sm">prisma-cluster</span> · servicio
-        <span className="font-mono text-sm"> prisma-app</span> — orquestación gestionada frente a un despliegue manual.
+        Un cluster ECS por servicio (front · backjs · backpy), <span className="font-mono text-sm">3 en total</span> — orquestación gestionada frente a un despliegue manual sobre EC2.
       </p>
 
       <div className="grid grid-cols-3 gap-5">

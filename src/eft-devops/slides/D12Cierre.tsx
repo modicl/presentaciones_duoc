@@ -33,9 +33,9 @@ export default function D12Cierre() {
 
         <ul className="space-y-2.5 max-w-2xl">
           {[
-            'Contenedores multietapa minimalistas y orquestación local con Docker Compose.',
-            'Pipeline automatizado en GitHub Actions: build → push a ECR → deploy a ECS.',
-            'ECS Fargate con escalado por demanda y observabilidad en CloudWatch.',
+            'Tres servicios contenerizados (Front, Backend JS, Backend Python) y MariaDB, con Docker Compose local.',
+            'Pipeline automatizado en GitHub Actions: test → build → push a ECR → deploy a ECS.',
+            'ECS Fargate detrás de un ALB, con autoscaling por CPU y observabilidad en CloudWatch.',
           ].map(t => (
             <li key={t} className="flex gap-3 font-body text-base" style={{ color: 'var(--text-muted)' }}>
               <span className="mt-0.5 shrink-0 text-duoc-yellow">✓</span>
@@ -49,7 +49,7 @@ export default function D12Cierre() {
           <div className="w-6 h-0.5 bg-duoc-yellow" />
         </div>
         <p className="font-body text-sm mt-4" style={{ color: 'var(--text-dim)' }}>
-          Repositorio público en GitHub · rama <span className="font-mono">aws-deploy</span> · README + informe técnico
+          Repositorio público en GitHub · ramas <span className="font-mono">main / aws</span> · README + informe técnico
         </p>
       </div>
 

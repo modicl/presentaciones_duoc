@@ -1,10 +1,10 @@
-import archImg from '../../assets/deployment_architecture_aws_ecs.png'
+import archImg from '../../assets/diagrama_arquitectura.png'
 
 const POINTS = [
-  ['Puerta única', 'El front (nginx) es el único componente público: sirve la SPA y proxea a los 6 backends.'],
-  ['Loopback', 'Los 6 contenedores viven en una sola task de Fargate y se comunican por 127.0.0.1 (modo awsvpc).'],
-  ['Database-per-service', 'Cada microservicio NestJS usa Prisma sobre PostgreSQL; se correlacionan por user_id de Supabase.'],
-  ['Dependencias externas', 'Salida controlada hacia PostgreSQL (Aiven/Neon), Supabase Auth y Gemini API.'],
+  ['Puerta única', 'Un ALB internet-facing recibe todo el tráfico en el :80 y enruta por path: /api/users → BackJS, /api/products → BackPy, default → Front.'],
+  ['Tres servicios', 'Frontend (Nginx :80), Backend JS (Express :8081) y Backend Python (Flask :8082) corren como tareas Fargate en el mismo cluster ECS.'],
+  ['Base de datos', 'MariaDB sobre EC2 (Amazon Linux 2023, :3306) con las bases users_db y products_db; los backends conectan por variables de entorno.'],
+  ['Tres capas de SG', 'sg-alb (público) → sg-ecs (solo desde el ALB) → sg-db (solo desde ECS): el único punto de entrada público es el ALB.'],
 ]
 
 export default function D02Arquitectura() {
@@ -18,7 +18,7 @@ export default function D02Arquitectura() {
           Arquitectura de despliegue · IE1
         </p>
         <h2 className="font-heading text-4xl font-bold leading-tight mb-6" style={{ color: 'var(--text)' }}>
-          Seis microservicios, una puerta
+          Tres servicios, una puerta
         </h2>
 
         <ul className="space-y-3.5 max-w-md">

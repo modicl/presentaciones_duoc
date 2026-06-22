@@ -1,10 +1,17 @@
-import pipelineImg from '../../assets/cicd_pipeline_diagram.png'
-
 const POINTS = [
-  ['Disparador', 'push a la rama aws-deploy → workflow deploy-ecr.yml en un runner ubuntu-latest.'],
+  ['Disparador', 'push a las ramas main o aws (y workflow_dispatch manual) lanza deploy.yml en un runner ubuntu-latest.'],
+  ['Test como compuerta', 'Las pruebas se ejecutan antes de construir la imagen; si fallan, el pipeline se detiene y no se publica nada roto.'],
   ['Build & push', 'Imagen multietapa → Amazon ECR con doble tag :<sha> + :latest.'],
-  ['Deploy', 'force-new-deployment: una task → un redeploy de los 6 contenedores con :latest.'],
-  ['Secretos', 'Credenciales AWS del lab en GitHub Secrets (4 valores temporales, ~4 h).'],
+  ['Deploy', 'Actualiza la task definition y fuerza un nuevo despliegue del servicio en ECS para tomar la imagen recién publicada.'],
+]
+
+const STAGES = [
+  ['1', 'Checkout', 'descarga el código'],
+  ['2', 'Test', 'frena ante un fallo'],
+  ['3', 'AWS creds', 'desde GitHub Secrets'],
+  ['4', 'Login ECR', 'docker login temporal'],
+  ['5', 'Build & push', ':<sha> + :latest'],
+  ['6', 'Deploy ECS', 'force-new-deployment'],
 ]
 
 export default function D07Pipeline() {
@@ -33,16 +40,31 @@ export default function D07Pipeline() {
         </ul>
       </div>
 
-      {/* Right column — diagrama */}
+      {/* Right column — etapas del pipeline */}
       <div
-        className="flex flex-col justify-center items-center flex-[3] border-l p-6"
+        className="flex flex-col justify-center flex-[3] border-l p-10 gap-3"
         style={{ backgroundColor: 'var(--bg-right)', borderColor: 'var(--border)' }}
       >
-        <img
-          src={pipelineImg}
-          alt="Diagrama del pipeline CI/CD en GitHub Actions"
-          className="max-h-full max-w-full object-contain rounded-lg"
-        />
+        <p className="font-body text-xs uppercase tracking-widest mb-2" style={{ color: 'var(--text-dim)' }}>
+          .github/workflows/deploy.yml
+        </p>
+        {STAGES.map(([n, t, d]) => (
+          <div key={t} className="flex items-center gap-4">
+            <div
+              className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full font-heading font-bold text-sm"
+              style={{ backgroundColor: '#307FE2', color: '#fff' }}
+            >
+              {n}
+            </div>
+            <div
+              className="flex-1 rounded-lg px-4 py-2.5 border flex items-baseline justify-between gap-3"
+              style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+            >
+              <span className="font-heading font-bold text-base" style={{ color: 'var(--text)' }}>{t}</span>
+              <span className="font-mono text-xs text-right" style={{ color: 'var(--text-dim)' }}>{d}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )

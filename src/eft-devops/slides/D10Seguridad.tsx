@@ -1,10 +1,10 @@
 import SlideLayout from '../../slides/SlideLayout'
 
 const POINTS = [
-  ['Secretos', 'GitHub Secrets para las credenciales AWS del CI; variables de runtime inyectadas en la task. Los .env nunca llegan a Git (.gitignore / .dockerignore).'],
-  ['Mínimo privilegio', 'Solo ms-users tiene el SERVICE_ROLE de Supabase; el resto solo valida el JWT con la clave pública (JWKS). Tasks con el rol del lab.'],
-  ['Puertos mínimos', 'Cada imagen expone un solo puerto; el Security Group abre únicamente el 80. Todo lo demás viaja por loopback.'],
-  ['Hardening de imágenes', 'Bases alpine / slim, usuario no-root y build multietapa (sin toolchain en el runtime).'],
+  ['Security Groups en 3 capas', 'sg-alb (TCP 80 desde 0.0.0.0/0) → sg-ecs (80/8081/8082 solo desde sg-alb) → sg-db (3306 solo desde sg-ecs; 22 desde IP propia).'],
+  ['Secretos', 'Credenciales AWS en GitHub Secrets; variables no sensibles como env de la task. Los .env nunca llegan a Git (.gitignore / .dockerignore).'],
+  ['Escaneo y mínimo privilegio', 'Scan on push de ECR revisa CVEs en cada imagen; las tareas usan LabRole solo con permisos para ECR y CloudWatch.'],
+  ['Hardening de imágenes', 'Bases alpine / slim, build multietapa (sin JDK ni Maven en runtime), usuario no-root y un solo puerto expuesto por contenedor.'],
 ]
 
 export default function D10Seguridad() {
@@ -12,8 +12,8 @@ export default function D10Seguridad() {
     <SlideLayout
       label="Seguridad básica · Configuración y secretos"
       title="Secretos y endurecimiento"
-      stat=":80"
-      statLabel="único puerto expuesto"
+      stat="3"
+      statLabel="capas de security groups"
       accentColor="#307FE2"
       statColor="#307FE2"
     >
