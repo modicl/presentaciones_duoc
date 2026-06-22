@@ -1,4 +1,4 @@
-import archImg from '../../assets/diagrama_arquitectura.png'
+import archImg from '../../assets/diagrama_arquitectura_logica.svg'
 
 const POINTS = [
   ['Puerta única', 'Un ALB internet-facing recibe todo el tráfico en el :80 y enruta por path: /api/users → BackJS, /api/products → BackPy, default → Front.'],
