@@ -1,4 +1,17 @@
-import pipelineImg from '../../assets/cicd_pipeline_diagram.png'
+function Stage({ icon, title, sub, color }: { icon: string; title: string; sub: string; color: string }) {
+  return (
+    <div
+      className="w-full rounded-lg px-4 py-3 border flex items-center gap-3"
+      style={{ backgroundColor: color + '14', borderColor: color + '55' }}
+    >
+      <span className="shrink-0 text-xl">{icon}</span>
+      <div className="min-w-0">
+        <p className="font-body font-bold text-sm leading-tight" style={{ color }}>{title}</p>
+        <p className="font-body text-xs leading-tight" style={{ color: 'var(--text-muted)' }}>{sub}</p>
+      </div>
+    </div>
+  )
+}
 
 const POINTS = [
   ['Disparador', 'push a la rama aws-deploy → workflow deploy-ecr.yml en un runner ubuntu-latest.'],
@@ -33,16 +46,27 @@ export default function D07Pipeline() {
         </ul>
       </div>
 
-      {/* Right column — diagrama */}
+      {/* Right column — diagrama del pipeline */}
       <div
-        className="flex flex-col justify-center items-center flex-[3] border-l p-6"
+        className="flex flex-col justify-center items-center flex-[3] border-l p-8"
         style={{ backgroundColor: 'var(--bg-right)', borderColor: 'var(--border)' }}
       >
-        <img
-          src={pipelineImg}
-          alt="Diagrama del pipeline CI/CD en GitHub Actions"
-          className="max-h-full max-w-full object-contain rounded-lg"
-        />
+        <p className="font-body text-xs uppercase tracking-widest mb-5 self-center" style={{ color: 'var(--text-dim)' }}>
+          deploy-ecr.yml · runner ubuntu-latest
+        </p>
+        <div className="w-full max-w-sm flex flex-col items-center gap-2">
+          <Stage icon="🚀" color="#307FE2" title="1 · Disparador"
+            sub="push a la rama aws-deploy" />
+          <span style={{ color: 'var(--text-dim)' }}>↓</span>
+          <Stage icon="🐳" color="#FFB800" title="2 · Build & push"
+            sub="imagen multietapa → Amazon ECR · tags :<sha> + :latest" />
+          <span style={{ color: 'var(--text-dim)' }}>↓</span>
+          <Stage icon="♻️" color="#43B02A" title="3 · Deploy"
+            sub="force-new-deployment · redeploy de los 6 contenedores con :latest" />
+          <span style={{ color: 'var(--text-dim)' }}>↓</span>
+          <Stage icon="🔑" color="#E24030" title="Secretos"
+            sub="credenciales AWS del lab en GitHub Secrets (4 valores, ~4 h)" />
+        </div>
       </div>
     </div>
   )

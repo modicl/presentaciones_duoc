@@ -1,4 +1,4 @@
-import archImg from '../../assets/deployment_architecture_aws_ecs.png'
+import archImg from '../../assets/diagrama_arquitectura.png'
 
 const POINTS = [
   ['Puerta única', 'El front (nginx) es el único componente público: sirve la SPA y proxea a los 6 backends.'],

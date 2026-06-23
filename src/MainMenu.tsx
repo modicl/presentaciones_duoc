@@ -141,6 +141,30 @@ export default function MainMenu() {
               Ver presentación <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
             </div>
           </a>
+
+          <a
+            href="?presentation=eft-fullstack"
+            className="group relative flex flex-col items-start p-8 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl text-left"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            <div className="h-12 w-12 rounded-xl flex items-center justify-center mb-6 font-bold group-hover:scale-110 transition-transform" style={{ backgroundColor: 'rgba(155,89,182,0.2)', color: '#9B59B6' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/>
+              </svg>
+            </div>
+            <h2 className="font-heading text-xl font-bold mb-3" style={{ color: 'var(--text)' }}>
+              Fullstack III — EFT
+            </h2>
+            <p className="font-body text-sm" style={{ color: 'var(--text-muted)' }}>
+              Defensa Final Transversal - Microservicios P.R.I.S.M.A
+            </p>
+            <div className="mt-6 flex items-center text-sm font-semibold group-hover:gap-2 transition-all" style={{ color: '#9B59B6' }}>
+              Ver presentación <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            </div>
+          </a>
         </div>
       </div>
 
