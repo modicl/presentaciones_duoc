@@ -15,7 +15,7 @@ export default function D02Arquitectura() {
       {/* Left column — narración */}
       <div className="flex flex-col justify-center pl-16 pr-8 py-10 flex-[2] min-w-0">
         <p className="font-body text-sm tracking-[0.25em] text-duoc-blue uppercase mb-3">
-          Arquitectura de despliegue · IE1
+          Arquitectura de despliegue · IE1  
         </p>
         <h2 className="font-heading text-4xl font-bold leading-tight mb-6" style={{ color: 'var(--text)' }}>
           Seis microservicios, una puerta
