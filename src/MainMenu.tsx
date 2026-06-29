@@ -119,6 +119,30 @@ export default function MainMenu() {
           </a>
 
           <a
+            href="?presentation=examen-evaluacion"
+            className="group relative flex flex-col items-start p-8 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl text-left"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            <div className="h-12 w-12 rounded-xl flex items-center justify-center mb-6 font-bold group-hover:scale-110 transition-transform" style={{ backgroundColor: 'rgba(48,127,226,0.2)', color: '#307FE2' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h2 className="font-heading text-xl font-bold mb-3" style={{ color: 'var(--text)' }}>
+              Evaluación de Proyectos
+            </h2>
+            <p className="font-body text-sm" style={{ color: 'var(--text-muted)' }}>
+              Examen Final - EDGDA RedNorte
+            </p>
+            <div className="mt-6 flex items-center text-sm font-semibold group-hover:gap-2 transition-all" style={{ color: '#307FE2' }}>
+              Ver presentación <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            </div>
+          </a>
+
+          <a
             href="?presentation=eft-devops"
             className="group relative flex flex-col items-start p-8 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl text-left"
             style={{

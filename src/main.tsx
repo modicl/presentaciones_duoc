@@ -8,6 +8,7 @@ import AppPrisma from './prisma/AppPrisma'
 import AppEP2 from './ep2/AppEP2'
 import AppEP3 from './ep3/AppEP3'
 import AppEftDevops from './eft-devops/AppEftDevops'
+import AppExamen from './examen-evaluacion/AppExamen'
 import MainMenu from './MainMenu'
 
 const params = new URLSearchParams(window.location.search)
@@ -29,6 +30,7 @@ function Root() {
   if (presentation === 'ep2') return <AppEP2 />
   if (presentation === 'ep3') return <AppEP3 />
   if (presentation === 'eft-devops') return <AppEftDevops />
+  if (presentation === 'examen-evaluacion') return <AppExamen />
   return <MainMenu />
 }
 
