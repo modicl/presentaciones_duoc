@@ -56,9 +56,9 @@ export default function T14PruebasFuncionales() {
         style={{ backgroundColor: 'var(--bg-right)', borderColor: 'var(--border)' }}
       >
         <div className="w-full rounded-xl p-4 border" style={{ borderColor: '#FFB80055', backgroundColor: '#FFB80012' }}>
-          <p className="font-body text-xs uppercase tracking-widest mb-2" style={{ color: '#FFB800' }}>❓ Pregunta anticipada</p>
+          <p className="font-body text-xs uppercase tracking-widest mb-2" style={{ color: '#FFB800' }}> Si 1322 unitarias pasan al 100%, ¿por qué fallaron 7 funcionales?❓ </p>
           <p className="font-body text-sm font-bold mb-1" style={{ color: 'var(--text)' }}>
-            Si 1322 unitarias pasan al 100%, ¿por qué fallaron 7 funcionales?
+            
           </p>
           <p className="font-body text-xs" style={{ color: 'var(--text-muted)' }}>
             Porque las unitarias <b>mockean</b> el JWT; las funcionales usan el JWT real de Supabase. Es un gap de

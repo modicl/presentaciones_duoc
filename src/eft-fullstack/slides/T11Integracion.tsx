@@ -1,5 +1,5 @@
 // Indicador 5 — Integración backend ↔ frontend ↔ base de datos
-import seqDiagram from '../../assets/Diagrama_secuencia_job_paci}.png'
+import seqDiagram from '../../assets/diagrama-secuencia-job-paci.png'
 import legendJob from '../../assets/leyenda-evidencia-job-paci.png'
 
 export default function T11Integracion() {
