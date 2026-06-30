@@ -3,6 +3,20 @@ import { useState, useEffect } from 'react'
 export default function MainMenu() {
   const [light, setLight] = useState(false)
 
+  useEffect(() => {
+    const root = document.getElementById('root')!
+    document.documentElement.style.overflow = 'auto'
+    document.body.style.overflow = 'auto'
+    root.style.overflow = 'auto'
+    root.style.height = 'auto'
+    return () => {
+      document.documentElement.style.overflow = ''
+      document.body.style.overflow = ''
+      root.style.overflow = ''
+      root.style.height = ''
+    }
+  }, [])
+
   return (
     <div
       className={`min-h-screen w-full flex flex-col items-center justify-center p-6${light ? ' theme-light' : ''}`}
