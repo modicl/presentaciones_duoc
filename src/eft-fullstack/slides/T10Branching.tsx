@@ -51,8 +51,8 @@ export default function T10Branching() {
           </p>
         </div>
         <div className="w-full rounded-xl p-4 border" style={{ borderColor: '#FFB80055', backgroundColor: '#FFB80012' }}>
-          <p className="font-body text-xs uppercase tracking-widest mb-2" style={{ color: '#FFB800' }}>❓ Pregunta anticipada</p>
-          <p className="font-body text-sm font-bold mb-1" style={{ color: 'var(--text)' }}>¿Por qué trunk-based y no GitFlow puro?</p>
+          <p className="font-body text-xs uppercase tracking-widest mb-2" style={{ color: '#FFB800' }}>¿Por qué trunk-based y no GitFlow puro? </p>
+          <p className="font-body text-sm font-bold mb-1" style={{ color: 'var(--text)' }}></p>
           <p className="font-body text-xs" style={{ color: 'var(--text-muted)' }}>
             Equipo pequeño: integración más rápida y menos ramas vivas, manteniendo el mismo aislamiento con feature/*.
           </p>

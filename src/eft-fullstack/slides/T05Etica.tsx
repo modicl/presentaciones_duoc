@@ -66,10 +66,9 @@ export default function T05Etica() {
       >
         <div className="w-full rounded-xl p-5 border" style={{ borderColor: '#FFB80055', backgroundColor: '#FFB80012' }}>
           <p className="font-body text-xs uppercase tracking-widest mb-2" style={{ color: '#FFB800' }}>
-            ❓ Pregunta anticipada
-          </p>
-          <p className="font-body text-sm font-bold mb-2" style={{ color: 'var(--text)' }}>
             ¿Por qué validar compliance antes del LLM y no después?
+          </p>
+          <p className="font-body text-sm font-bold mb-2" style={{ color: 'var(--text)' }}>            
           </p>
           <p className="font-body text-xs" style={{ color: 'var(--text-muted)' }}>
             Porque es <b>preventivo</b>: evita exponer PII al modelo, reduce costo y energía, y previene generar un PACI
