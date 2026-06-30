@@ -6,3 +6,6 @@ node_modules
 .playwright-mcp/
 *.png
 *.jpg
+
+# Excepción: assets usados por la app (deben subirse para que Vercel compile)
+!src/assets/diagrama_arquitectura.png
