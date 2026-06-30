@@ -1,4 +1,5 @@
 // Indicadores 3 y 8 — Patrones de diseño en frontend y backend
+import proxyAuth from '../../assets/proxy desde auth.jpg'
 
 function PatternCard({ name, tag, desc, example, color }: { name: string; tag: string; desc: string; example: string; color: string }) {
   return (
@@ -18,7 +19,7 @@ export default function T07Patrones() {
     <div className="relative w-full h-full flex overflow-hidden" style={{ backgroundColor: 'var(--bg)' }}>
       <div className="absolute left-0 top-0 bottom-0 w-1.5 z-10 bg-duoc-blue" />
 
-      <div className="flex flex-col justify-center pl-16 pr-16 py-8 w-full min-w-0">
+      <div className="flex flex-col justify-center pl-16 pr-8 py-8 flex-1 min-w-0">
         <p className="font-body text-sm tracking-[0.25em] text-duoc-blue uppercase mb-2">
           Indicadores 3 y 8 — Patrones de diseño
         </p>
@@ -26,7 +27,7 @@ export default function T07Patrones() {
           Patrones que sostienen el código
         </h2>
 
-        <div className="grid grid-cols-3 gap-2.5">
+        <div className="grid grid-cols-2 gap-2.5">
           <PatternCard color="#FFB800" name="Backend-for-Frontend" tag="BFF" desc="Agrega múltiples microservicios en una respuesta y mapea errores 502 a respuestas controladas."
             example="/api/dashboard/me" />
           <PatternCard color="#307FE2" name="Repository tipado" tag="DAO" desc="Prisma Client actúa como repositorio; consultas tipadas con paginación."
@@ -47,6 +48,18 @@ export default function T07Patrones() {
             El <b>DashboardService</b> del BFF agrega varios microservicios y alcanza <b>100% de ramas</b> en sus tests.
           </p>
         </div>
+      </div>
+
+      <div className="flex flex-col justify-center pr-12 py-8 shrink-0" style={{ width: '38%' }}>
+        <p className="font-body text-xs font-bold mb-2 text-duoc-blue uppercase tracking-wider">
+          Backend-for-Frontend en acción
+        </p>
+        <div className="rounded-lg overflow-hidden border" style={{ borderColor: '#FFB80038' }}>
+          <img src={proxyAuth} alt="Proxy a ms-users desde Auth — el BFF delega login y reenvía el token al microservicio destino" className="w-full block" />
+        </div>
+        <p className="font-body text-[11px] mt-2" style={{ color: 'var(--text-muted)' }}>
+          El servicio <b>Auth</b> actúa como proxy: delega <code className="font-mono">login</code> y reenvía el token en <code className="font-mono">/api/auth/me</code> hacia <b>ms-users</b>.
+        </p>
       </div>
     </div>
   )
